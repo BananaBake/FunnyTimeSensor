@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Next Funny Time</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="body">
+  <h1>Funny T¡me Sensor ®</h1>
+    <h2>Type:</h2>
+    <p>
+      Configure the clock setting.</p>
+    <span id="hr-mode-selector">
+    <input checked type="radio" id="24hrs" name="hr-mode" onchange="updateHrs(24)">
+    <label for="24hrs">24 hrs</label>
+    <input type="radio" id="12hrs" name="hr-mode" onchange="updateHrs(12)">
+    <label for="12hrs">12 hrs</label>
+    </span>
+  <h2>Next funny time:</h2>
+  <div class="time">
+    <p id="time">Loading...</p>
+    <p id="type">...</p>
+  </div>
+  <h2 id="in">now</h2>
+  <script src="script.js"></script>
+  </div>
+</body>
+
+</html>
