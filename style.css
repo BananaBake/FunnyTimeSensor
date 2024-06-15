@@ -3,6 +3,15 @@ html {
   width: 100vw;
 }
 
+:root {
+  --blue: #082045;
+  --red: #450808;
+  --orange: #9e3200;
+  --green: #054500;
+  --purple: #3e0070;
+  --grey: #919294;
+}
+
 .raleway,
 body,
 div,
@@ -16,7 +25,7 @@ h2 {
 }
 
 body {
-  background-color: #450808;
+  background-color: #082045;
 }
 
 .body {
@@ -35,7 +44,6 @@ body {
   background-color: #fff;
   color: #000000;
   border: 0.5px solid #000000;
-  ;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
@@ -61,20 +69,65 @@ body {
   margin-top: 15px;
 }
 
+.scheme-selector {
+  color: #fff;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.scheme-selector:hover {
+  font-weight: bold;
+}
+
+.scheme-selector svg {
+  margin-right: 3px;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+#scheme-selector-popup,
+h1 p {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+}
+
+#scheme-selector-popup input {
+  padding: 1.5px;
+}
+
+.cancel-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--red);
+  color: #fff;
+}
+
+.set-scheme-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--green);
+  color: #fff;
+}
+
 @keyframes pulse {
   0% {
-    border: 0.5px solid #ffffff;;
+    border: 0.5px solid #ffffff;
+    ;
   }
 
   50% {
-    border: 15.8px solid #ffb31c;
+    border: 10px solid #ffb31c;
   }
 
   100% {
     border: 0.5px solid #ffffff;
   }
-}
-
-input {
-background-color: #007800;  
 }

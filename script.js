@@ -93,6 +93,11 @@ function updateHrs(mode) {
   updateTime();
 }
 
+function updateScheme(name) {
+  document.body.style.backgroundColor = "var(--" + name + ")";
+  document.getElementById("scheme-selector-popup").close();
+}
+
 listFunnyTimes();
 updateTime();
 setInterval(updateTime, 1000)

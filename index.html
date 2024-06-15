@@ -7,30 +7,82 @@
   <title>Next Funny Time</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+
   <div class="body">
-  <h1>Funny T¡me Sensor ®</h1>
+    <h1>Funny Time Sensor ®</h1>
     <h2>Type:</h2>
     <p>
       Configure the clock setting.</p>
     <span id="hr-mode-selector">
-    <input checked type="radio" id="24hrs" name="hr-mode" onchange="updateHrs(24)">
-    <label for="24hrs">24 hrs</label>
-    <input type="radio" id="12hrs" name="hr-mode" onchange="updateHrs(12)">
-    <label for="12hrs">12 hrs</label>
+      <input checked type="radio" id="24hrs" name="hr-mode" onchange="updateHrs(24)">
+      <label for="24hrs">24 hrs</label>
+      <input type="radio" id="12hrs" name="hr-mode" onchange="updateHrs(12)">
+      <label for="12hrs">12 hrs</label>
     </span>
-  <h2>Next funny time:</h2>
-  <div class="time">
-    <p id="time">Loading...</p>
-    <p id="type">...</p>
+    <h2>Next funny time:</h2>
+    <div class="time">
+      <p id="time">Loading...</p>
+      <p id="type">...</p>
+    </div>
+    <h2 id="in">now</h2>
+    <span class="scheme-selector" onclick="document.getElementById('scheme-selector-popup').showModal();">
+      <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed">
+        <path
+          d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm20-60q137-10 228.5-106T820-480q0-138-91.5-234T500-820v680Z" />
+      </svg>
+      Change colour mode
+    </span>
+
   </div>
-  <h2 id="in">now</h2>
-  <script src="script.js"></script>
-  </div>
+
+  <dialog id="scheme-selector-popup" onblur="this.close()">
+    <span>
+      <!-- onclick="document.getElementById('scheme-selector-popup').close();"
+      -->
+      <h1>Change colour mode</h1>
+      <p>Choose a colour scheme.</p>
+      <span class="scheme-selector-radio">
+
+        <!--Blue-->
+        <input type="radio" id="blue" name="scheme" checked onchange="updateScheme('blue')">
+        <label for="blue">Blue</label>
+        <br></br>
+        <!--Red-->
+        <input type="radio" id="red" name="scheme" onchange="updateScheme('red')">
+        <label for="red">Red</label>
+        <br></br>
+        <!--Orange-->
+        <input type="radio" id="orange" name="scheme" onchange="updateScheme('orange')">
+        <label for="orange">Orange</label>
+        <br></br>
+        <!--Green-->
+        <input type="radio" id="green" name="scheme" onchange="updateScheme('green')">
+        <label for="green">Green</label>
+        <br></br>
+        <!--Purple-->
+        <input type="radio" id="purple" name="scheme" onchange="updateScheme('purple')">
+        <label for="purple">Purple</label>
+        <br></br>
+        <!--Grey-->
+        <input type="radio" id="grey" name="scheme" onchange="updateScheme('grey')">
+        <label for="grey">Grey</label>
+      </span>
+      <br></br>
+      <button class="cancel-btn" onclick="document.getElementById('scheme-selector-popup').close();">
+        Cancel
+        </button>
+<button class="set-scheme-btn" onclick="updateScheme();">
+  Change scheme
+  </button>
+
+  </dialog>
+  <script src=" script.js"></script>
 </body>
 
 </html>
