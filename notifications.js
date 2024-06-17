@@ -1,5 +1,6 @@
+
 async function requestNotifPermission() {
-  
+
   if (Notification.permission !== 'granted') {
     const permission = await Notification.requestPermission();
     return permission === 'granted';
@@ -32,4 +33,20 @@ async function showNotification(title, icon, body, onclick, oncancel, mustclick,
   }
 }
 
-showNotification("Funny time", "", "Now!", "", ""," true", 6000);
+showNotification("Funny time", "<svg></svg>", "Now!", () => { }, () => { }, false, 6000);
+
+function share(title, text, icon) {
+  try {
+    navigator.share({
+      title: title,
+      text: text,
+      url: window.location.href,
+      icon: icon
+    });
+  } catch (e) {
+    
+  }
+}
+
+document.getElementById('in').onclick = () =>
+  share("Funny time sensor", "Funny time! \n Now, you'll never miss them :).", "./favicon.svg");
