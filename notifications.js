@@ -33,7 +33,6 @@ async function showNotification(title, icon, body, onclick, oncancel, mustclick,
   }
 }
 
-showNotification("Funny time", "<svg></svg>", "Now!", () => { }, () => { }, false, 6000);
 
 function share(title, text, icon) {
   try {
@@ -44,9 +43,14 @@ function share(title, text, icon) {
       icon: icon
     });
   } catch (e) {
-    
+
   }
 }
 
 document.getElementById('in').onclick = () =>
-  share("Funny time sensor", "Funny time! \n Now, you'll never miss them :).", "./favicon.svg");
+  share("Funny time sensor", "Funny time! \n Now, you'll never miss them :).", "./a.jpg");
+
+document.getElementById('timee').onclick = () => {
+  alert(5)
+  showNotification("Funny time", "a.jpg", "Now!", () => { }, () => { }, false, 6000)
+};
